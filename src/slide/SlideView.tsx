@@ -6,6 +6,7 @@ import { effectiveImageDim, slideHasImage } from '../data/imageDim';
 import { DeckCtx, useDeck } from '../deck/DeckContext';
 import { SlideScope } from '../copy/SlideScope';
 import { RenderLayout } from '../layouts/registry';
+import BrandLayer from './BrandLayer';
 
 function BackgroundLayer({ bg }: { bg: Background | undefined }) {
   const base = { position: 'absolute', inset: 0, zIndex: 0 } as const;
@@ -162,6 +163,7 @@ export default function SlideView({
         style={{ position: 'relative', width: '100%', height: '100%' }}
       >
         <BackgroundLayer bg={slide.background} />
+        <BrandLayer slide={slide} />
         <div
           style={{
             position: 'relative',

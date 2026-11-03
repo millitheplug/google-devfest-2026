@@ -332,3 +332,41 @@
 .ed-frame-inner ::selection {
   background: color-mix(in srgb, var(--ui-accent) 38%, transparent);
 }
+
+/* ── DevFest brand layer (logos + pattern strip from the template) ───── */
+.brand-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.brand-strip {
+  position: absolute;
+  top: clamp(10px, 1.6vh, 20px);
+  left: 0;
+  right: 0;
+  height: clamp(26px, 4.4vh, 48px);
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-position: center;
+  opacity: 0.92;
+}
+.brand-deco {
+  position: absolute;
+  opacity: 0.95;
+}
+.brand-gdg {
+  position: absolute;
+  left: clamp(20px, 2.4vw, 44px);
+  bottom: clamp(14px, 2.6vh, 30px);
+  height: clamp(16px, 2.3vh, 28px);
+  width: auto;
+}
+.brand-devfest {
+  position: absolute;
+  right: clamp(20px, 2.4vw, 44px);
+  bottom: clamp(12px, 2.4vh, 28px);
+  height: clamp(20px, 3.2vh, 38px);
+  width: auto;
+}
