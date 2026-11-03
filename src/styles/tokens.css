@@ -1,0 +1,42 @@
+/* ===================================================================
+   BEYOND THE FORM — DevFest-inspired presentation theme
+   =================================================================== */
+:root {
+  --bg: #f4f0e8;
+  --bg-grad-1: color-mix(in srgb, var(--accent) 10%, transparent);
+  --bg-grad-2: color-mix(in srgb, var(--accent) 6%, transparent);
+  --surface: rgba(255, 255, 255, 0.78);
+  --surface-2: rgba(255, 255, 255, 0.96);
+
+  --fg: #171923;
+  --fg-muted: #484852;
+  --fg-faint: #777780;
+
+  --hair: rgba(23, 25, 35, 0.22);
+  --hair-2: rgba(23, 25, 35, 0.1);
+
+  --primary: #ffcf33;
+  --accent: #ffcf33;
+  --accent-ink: #171923;
+
+  --radius: 26px;
+  --radius-sm: 16px;
+  --radius-lg: 34px;
+
+  --shadow: 0 28px 70px -36px rgba(23, 25, 35, 0.38);
+  --glow: 0 28px 70px -36px color-mix(in srgb, var(--accent) 60%, transparent);
+
+  --font-head: 'Outfit', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --dur: 0.46s;
+  --ease: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --grain: 0.02;
+  --vignette: rgba(23, 25, 35, 0.08);
+
+  --gutter: clamp(28px, 6vw, 120px);
+  --gutter-y: clamp(40px, 8vh, 96px);
+}
