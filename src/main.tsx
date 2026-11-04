@@ -5,6 +5,7 @@ import './styles/tokens.css';
 import './styles/chrome-tokens.css';
 import './styles/base.css';
 import './styles/chrome.css';
+import './styles/scenes.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

@@ -273,6 +273,9 @@ export type CodeProps = Scaled<{
   highlight?: string;
 }>;
 
+/** Cinematic animated scene; `kind` selects the scene, other keys are its content. */
+export type SceneProps = { kind: string; kicker?: string; title?: string; [key: string]: unknown };
+
 export const LAYOUT_NAMES = [
   'cover',
   'section',
@@ -304,6 +307,7 @@ export const LAYOUT_NAMES = [
   'insight',
   'chat',
   'code',
+  'scene',
 ] as const;
 
 export type LayoutName = (typeof LAYOUT_NAMES)[number];
@@ -339,6 +343,7 @@ export interface LayoutPropsByName {
   insight: InsightProps;
   chat: ChatProps;
   code: CodeProps;
+  scene: SceneProps;
 }
 
 export type LayoutProps = LayoutPropsByName[LayoutName];

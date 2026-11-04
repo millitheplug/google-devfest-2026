@@ -32,7 +32,10 @@ export default function BrandLayer({ slide }: { slide: SlideData }) {
   const deco = DECO[slide.layout];
 
   return (
-    <div className="brand-layer" aria-hidden>
+    <div
+      className={'brand-layer' + (slide.props?.dark ? ' brand-dark' : '')}
+      aria-hidden
+    >
       <div
         className="brand-strip"
         style={{ backgroundImage: `url(${B}strip.png)` }}

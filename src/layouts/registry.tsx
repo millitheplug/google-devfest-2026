@@ -4,13 +4,14 @@ import { coreLayouts } from './core';
 import { gridLayouts } from './grids';
 import { blockLayouts } from './blocks';
 import { mediaLayouts } from './media';
+import { sceneLayouts } from './scenes';
 import { LAYOUT_NAMES, type LayoutName } from '../data/layoutProps';
 
 export type { LayoutName, LayoutProps } from '../data/layoutProps';
 export type { LayoutDef } from './shared';
 
 export const LAYOUTS: Record<string, LayoutDef> = Object.fromEntries(
-  [...coreLayouts, ...gridLayouts, ...mediaLayouts, ...blockLayouts].map(
+  [...coreLayouts, ...gridLayouts, ...mediaLayouts, ...blockLayouts, ...sceneLayouts].map(
     (l) => [l.type, l]
   )
 );
