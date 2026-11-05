@@ -38,5 +38,5 @@
   --vignette: rgba(23, 25, 35, 0.08);
 
   --gutter: clamp(28px, 6vw, 120px);
-  --gutter-y: clamp(40px, 8vh, 96px);
+  --gutter-y: clamp(24px, 8cqh, 96px);
 }

@@ -96,11 +96,11 @@ export function Questions({ props }: { props: SceneProps }) {
         })}
       </div>
       <div style={{ position: 'absolute', left: 120, right: 120, top: 345, ...fade(seg(t, 1500, 2100)) }}>
-        <Bubble style={{ fontSize: 22 }}>{props.text ?? 'Ask me anything: privacy by design, AI governance, ISO standards, the NDPA, or starting in security.'}</Bubble>
+        <Bubble style={{ fontSize: 34, fontWeight: 600 }}>{props.text ?? 'Ask me anything.'}</Bubble>
       </div>
       <div style={{ position: 'absolute', left: 0, right: 0, top: 500, display: 'flex', justifyContent: 'center', gap: 14, ...fade(seg(t, 1900, 2500)) }}>
-        {['Prompt injection', 'Consent & the NDPA', 'AI agent permissions', 'Getting into security'].map((x, i) => (
-          <Tab key={x} bg={[C.sun, C.sky, C.mint, '#fff'][i]} style={{ fontSize: 19 }}>{x}</Tab>
+        {['Consent & the NDPA', 'AI agent permissions', 'Getting into security'].map((x, i) => (
+          <Tab key={x} bg={[C.sky, C.mint, '#fff'][i]} style={{ fontSize: 19 }}>{x}</Tab>
         ))}
       </div>
       <Cursor x={cx} y={cy} click={stage >= 1} />

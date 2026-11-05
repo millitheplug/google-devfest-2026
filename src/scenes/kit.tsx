@@ -115,12 +115,12 @@ export function Stage({
   h,
   children,
   style,
-  pad = '80px 3% 66px',
 }: {
   w: number;
   h: number;
   children: ReactNode;
   style?: CSSProperties;
+  /** @deprecated safe area is now derived from the slide frame */
   pad?: string;
 }) {
   const box = useRef<HTMLDivElement>(null);
@@ -146,7 +146,7 @@ export function Stage({
     <div
       ref={box}
       className="sc-box"
-      style={{ position: 'absolute', inset: 0, padding: pad, ...style }}
+      style={{ position: 'absolute', top: '13.5cqh', bottom: '9.5cqh', left: '2.5cqw', right: '2.5cqw', ...style }}
     >
       <div style={{ position: 'relative', width: '100%', height: '100%' }}>
         <div

@@ -77,7 +77,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: max(var(--gutter-y), 76px) var(--gutter) max(var(--gutter-y), 56px);
+  padding: max(var(--gutter-y), 13.5cqh) var(--gutter) max(var(--gutter-y), 9.5cqh);
   overflow: hidden;
 }
 .slide.center {

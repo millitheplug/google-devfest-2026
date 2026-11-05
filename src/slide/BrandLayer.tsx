@@ -7,23 +7,23 @@ const B = `${import.meta.env.BASE_URL}brand/`;
 const DECO: Record<string, { img: string; style: CSSProperties }> = {
   code: {
     img: 'code.png',
-    style: { right: '5%', top: '15%', width: 'clamp(70px,8vw,150px)' },
+    style: { right: '5%', top: '15%', width: '8cqw' },
   },
   chat: {
     img: 'cursor.png',
-    style: { right: '6%', bottom: '13%', width: 'clamp(60px,7vw,130px)' },
+    style: { right: '6%', bottom: '13%', width: '7cqw' },
   },
   manifesto: {
     img: 'braces.png',
-    style: { right: '6%', bottom: '14%', width: 'clamp(70px,8vw,150px)' },
+    style: { right: '6%', bottom: '14%', width: '8cqw' },
   },
   persona: {
     img: 'globe.png',
-    style: { right: '5%', top: '15%', width: 'clamp(60px,7vw,130px)' },
+    style: { right: '5%', top: '15%', width: '7cqw' },
   },
   bigNumber: {
     img: 'asterisk.png',
-    style: { right: '7%', top: '16%', width: 'clamp(60px,7vw,130px)' },
+    style: { right: '7%', top: '16%', width: '7cqw' },
   },
 };
 
