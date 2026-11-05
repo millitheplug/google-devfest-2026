@@ -22,8 +22,8 @@ export default function PresentApp({
   const current = useStore((state) => state.current);
 
   useEffect(() => {
-    document.title = deck.title || 'Slides';
-  }, [deck.title]);
+    document.title = `${deck.title || 'Slides'} · ${slides.length} slides`;
+  }, [deck.title, slides.length]);
 
   useEffect(() => {
     applyFont(deck.font);

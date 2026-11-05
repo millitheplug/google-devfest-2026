@@ -44,8 +44,8 @@ export default function StudioApp() {
   useEffect(() => startVisualEditDeckSync(), []);
 
   useEffect(() => {
-    document.title = (title ? title + ' — ' : '') + 'Slides';
-  }, [title]);
+    document.title = (title ? title + ' — ' : '') + `Slides · ${slides.length} slides`;
+  }, [title, slides.length]);
 
   useEffect(() => {
     applyFont(font);
