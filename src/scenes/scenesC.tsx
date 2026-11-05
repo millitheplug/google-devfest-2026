@@ -56,7 +56,7 @@ export function AboutMe({ props }: { props: SceneProps }) {
           Focused on organisational resilience through enterprise security, effective controls, privacy practices, regulatory compliance and risk management, building <b>secure, responsible, privacy-conscious</b> digital ecosystems.
         </Bubble>
         <div style={fade(p(5))}>
-          <Tab bg={C.mint} style={{ fontSize: 17 }}>🎨 Beyond work: painting, where analytical rigour meets creativity</Tab>
+          <Tab bg={C.mint} style={{ fontSize: 17 }}>🎨 Beyond work: I paint, I draw and shamefully support Manchester United. </Tab>
         </div>
       </div>
       <div style={{ position: 'absolute', left: 710, top: 22, width: 380, transform: `translateY(${(1 - drop) * -420}px) rotate(${2.5 - (1 - drop) * 8}deg)`, opacity: clamp(drop * 2) }}>
