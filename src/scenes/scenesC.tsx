@@ -44,7 +44,7 @@ export function AboutMe({ props }: { props: SceneProps }) {
           Ireoluwatomiwa Omotayo
         </div>
         <div style={{ fontSize: 22, fontWeight: 600, marginBottom: 14, ...fade(p(1)) }}>
-          <Hl>Information Security Analyst</Hl> · GTCO Holdings (GTBank)
+          <Hl>Information Security Analyst</Hl>
         </div>
         <Bubble style={{ ...fade(p(2)), marginBottom: 10 }}>
           Experience across <b>financial services, EdTech, cybersecurity, blockchain and software development</b>. Expertise in information security, governance, <b>data privacy</b>, risk management, <b>AI</b> and digital transformation.
@@ -53,10 +53,10 @@ export function AboutMe({ props }: { props: SceneProps }) {
           <b>Certified Data Protection Officer</b> · ISO Lead Implementer &amp; Lead Auditor · ISO 27001, 42001, 27032, 27701 and related frameworks, plus certifications in cybersecurity, networking, application security and API security.
         </Bubble>
         <Bubble style={{ ...fade(p(4)), marginBottom: 10 }}>
-          Focused on organisational resilience through enterprise security, effective controls, privacy practices, regulatory compliance and risk management, building <b>secure, responsible, privacy-conscious</b> digital ecosystems.
+          Focused on organisational resilience through enterprise security, effective controls, privacy practices, regulatory compliance and risk management, building <b>secure, responsible, privacy conscious</b> digital ecosystems.
         </Bubble>
         <div style={fade(p(5))}>
-          <Tab bg={C.mint} style={{ fontSize: 17 }}>🎨 Beyond work: I paint, I draw and shamefully support Manchester United. </Tab>
+          <Tab bg={C.mint} style={{ fontSize: 16 }}>🎨 Beyond work: I paint, I draw and shamefully support Manchester United</Tab>
         </div>
       </div>
       <div style={{ position: 'absolute', left: 710, top: 22, width: 380, transform: `translateY(${(1 - drop) * -420}px) rotate(${2.5 - (1 - drop) * 8}deg)`, opacity: clamp(drop * 2) }}>
@@ -120,11 +120,11 @@ export function ThankYou({ props }: { props: SceneProps }) {
       <div style={{ position: 'absolute', left: 20, top: 90, width: 560 }}>
         <Bubble style={{ padding: '30px 50px', ...fade(p(0)) }}>
           <div style={{ fontSize: 96, fontWeight: 800, lineHeight: 1, letterSpacing: '-0.03em' }}>Thank<br />you!</div>
-          <div style={{ fontSize: 26, fontWeight: 600, marginTop: 14 }}>{props.line ?? 'The form is not the privacy. Privacy is something we engineer.'}</div>
+          {props.line ? <div style={{ fontSize: 26, fontWeight: 600, marginTop: 14 }}>{String(props.line)}</div> : null}
         </Bubble>
         <div style={{ marginTop: 22, textAlign: 'center', ...fade(p(2)) }}>
           <Tab bg="#fff" style={{ fontSize: 17, borderRadius: 18, lineHeight: 1.3 }}>
-            <b>Ireoluwatomiwa Omotayo</b><br />Information Security Analyst · GTCO Holdings
+            <b>Ireoluwatomiwa Omotayo</b><br />Information Security Analyst
           </Tab>
         </div>
       </div>

@@ -2,6 +2,7 @@ import type { LayoutDef } from './shared';
 import * as A from '../scenes/scenesA';
 import * as B from '../scenes/scenesB';
 import * as D from '../scenes/scenesC';
+import * as E from '../scenes/scenesD';
 
 type R = (p: { props: A.SceneProps }) => React.ReactNode;
 
@@ -32,6 +33,9 @@ const KINDS: Record<string, R> = {
   aboutMe: D.AboutMe,
   questions: D.Questions,
   thankYou: D.ThankYou,
+  meme: E.MemeSlide,
+  statements: E.Statements,
+  kali: E.KaliDemo,
 };
 
 export const sceneLayouts: LayoutDef[] = [

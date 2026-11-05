@@ -250,3 +250,83 @@ export function Cursor({
     />
   );
 }
+
+/** ms since the last stage change (resets each click); `total` in static mode. */
+export function useStageTime(stage: number, total: number) {
+  const { isStatic } = useDeck();
+  const [t, setT] = useState(isStatic ? total : 0);
+
+  useEffect(() => {
+    if (isStatic) {
+      setT(total);
+
+      return;
+    }
+
+    let raf = 0;
+    const s = performance.now();
+
+    const f = (n: number) => {
+      setT(clamp(n - s, 0, total));
+      if (n - s < total) raf = requestAnimationFrame(f);
+    };
+
+    setT(0);
+    raf = requestAnimationFrame(f);
+
+    return () => cancelAnimationFrame(raf);
+  }, [stage, total, isStatic]);
+
+  return t;
+}
+
+/** Full-slide meme beat: dimmed backdrop + tilted meme card + caption. */
+export function MemeOverlay({
+  show,
+  src,
+  caption,
+  top,
+  children,
+}: {
+  show: boolean;
+  src: string;
+  caption: ReactNode;
+  top?: ReactNode;
+  children?: ReactNode;
+}) {
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        inset: 0,
+        zIndex: 40,
+        display: 'grid',
+        placeItems: 'center',
+        background: 'rgba(16,17,24,.55)',
+        opacity: show ? 1 : 0,
+        pointerEvents: 'none',
+        transition: 'opacity .35s',
+      }}
+    >
+      <div
+        style={{
+          transform: show ? 'rotate(-2deg) scale(1)' : 'rotate(-8deg) scale(.7)',
+          transition: 'transform .5s cubic-bezier(.34,1.56,.64,1)',
+          background: '#fff',
+          border: `3px solid ${C.ink}`,
+          borderRadius: 22,
+          padding: '1.6cqh 1.6cqh 1.2cqh',
+          maxWidth: '62cqw',
+          boxShadow: '0 40px 70px -30px rgba(0,0,0,.7)',
+        }}
+      >
+        {top}
+        <div style={{ position: 'relative' }}>
+          <img src={`${BASE}memes/${src}.jpg`} alt="" style={{ display: 'block', height: '52cqh', maxWidth: '58cqw', objectFit: 'contain', borderRadius: 12 }} />
+          {children}
+        </div>
+        <div style={{ textAlign: 'center', fontSize: '2.6cqh', fontWeight: 700, padding: '1.2cqh 1cqh 0', maxWidth: '58cqw' }}>{caption}</div>
+      </div>
+    </div>
+  );
+}

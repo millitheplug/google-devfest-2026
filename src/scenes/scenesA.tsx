@@ -4,6 +4,7 @@ import {
   C,
   Cursor,
   Kicker,
+  MemeOverlay,
   Pill,
   Stage,
   clamp,
@@ -144,7 +145,7 @@ function SignupForm({
 /* ───────────── Real-website form animation ───────────── */
 export function WebForm({ props }: { props: SceneProps }) {
   const t = useClock(15000);
-  const stage = useStage(1);
+  const stage = useStage(2);
   const since = useSince(stage >= 1, 7000);
   const vals = FIELDS.map((f, i) => typed(f.v, t, 700 + i * 1500 + 450, 17));
   const tags = FIELDS.map((_, i) => t > 700 + i * 1500 + 1200);
@@ -181,6 +182,7 @@ export function WebForm({ props }: { props: SceneProps }) {
   ] as const;
 
   return (
+    <>
     <Stage w={1000} h={690}>
       <div style={{ position: 'absolute', left: 0, top: 0, width: 1000, height: 590 }}>
         <SignupForm shown={stage} vals={vals} checks={checks} tags={tags} active={active < 0 ? undefined : active} pulse={t > 13500} />
@@ -218,6 +220,8 @@ export function WebForm({ props }: { props: SceneProps }) {
         {props.caption ?? 'When the product manager asks for BVN, NIN, DOB and location for a simple newsletter.'}
       </div>
     </Stage>
+    <MemeOverlay show={stage >= 2} src="chloe" caption="When the product manager asks for BVN, NIN, DOB and location for a simple newsletter." />
+    </>
   );
 }
 
@@ -355,7 +359,7 @@ export function MoneyMachine() {
 
 /* ───────────── Opening: the plot twist ───────────── */
 const TWIST = [
-  'WAS CONSENT OBTAINED — OR WHAT’S YOUR LAWFUL BASIS?',
+  'WAS CONSENT OBTAINED, OR WHAT’S YOUR LAWFUL BASIS?',
   'WHY DO YOU NEED THEIR BVN?',
   'WHERE IS YOUR PRIVACY POLICY?',
   'WHO CAN ACCESS THEIR DATA?',
@@ -451,7 +455,7 @@ const TILES = [
   ['🏦', 'Fintech onboarding', 'BVN · SELFIE'],
   ['🎓', 'Admission portal', 'NAME · RESULTS'],
   ['🏥', 'Hospital registration', 'HEALTH · NOK'],
-  ['🛒', 'E-commerce checkout', 'ADDRESS · CARD'],
+  ['🛒', 'Online store checkout', 'ADDRESS · CARD'],
   ['💼', 'Job application', 'CV · DOB'],
   ['🛵', 'Delivery app', 'LOCATION · PHONE'],
   ['🪪', 'Digital identity', 'NIN · FACE'],
@@ -593,7 +597,7 @@ export function TerminalScene({ props }: { props: SceneProps }) {
       <div style={{ position: 'absolute', left: 80, top: 110, width: 840, height: 330, borderRadius: 16, background: C.night, border: `3px solid ${C.ink}`, overflow: 'hidden', boxShadow: '0 30px 60px -30px rgba(0,0,0,.6)' }}>
         <div style={{ height: 36, background: '#23252f', display: 'flex', gap: 8, alignItems: 'center', padding: '0 14px' }}>
           {['#ff5f57', '#febc2e', '#28c840'].map((c) => <i key={c} style={{ width: 12, height: 12, borderRadius: 8, background: c }} />)}
-          <span style={{ marginLeft: 12, color: '#9aa0b4', fontSize: 14, fontFamily: 'var(--font-mono)' }}>zsh — fintech-api</span>
+          <span style={{ marginLeft: 12, color: '#9aa0b4', fontSize: 14, fontFamily: 'var(--font-mono)' }}>zsh · fintech api</span>
         </div>
         <div style={{ padding: '14px 22px', fontFamily: 'var(--font-mono)', fontSize: 22, lineHeight: 1.45 }}>
           {lines.map(([txt, st, col], i) => (

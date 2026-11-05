@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import { C, Cursor, Kicker, Stage, clamp, ease, rnd, seg, typed, useClock, useSince, useStage } from './kit';
+import { C, Cursor, Kicker, MemeOverlay, Stage, clamp, ease, rnd, seg, typed, useClock, useSince, useStage } from './kit';
 import { Hl, type SceneProps } from './scenesA';
 
 const fade = (p: number, y = 20): CSSProperties => ({ opacity: p, transform: `translateY(${(1 - p) * y}px)` });
@@ -207,12 +207,13 @@ export function PdfInject({ props }: { props: SceneProps }) {
 /* ── Slide 14: the paste-into-AI incident ── */
 export function PasteLeak({ props }: { props: SceneProps }) {
   const t = useClock(9000);
-  const stage = useStage(1);
+  const stage = useStage(2);
   const since = useSince(stage >= 1, 1000);
   const mv = ease(seg(t, 3600, 5600));
   const rec = ['Name: Ada N.', 'Phone: +234 XXX XXX XXXX', 'Email: ada@example.test', 'Account: DEMO-001', 'Token: [REDACTED]'];
 
   return (
+    <>
     <Stage w={1100} h={620}>
       <Head p={props} />
       <div style={{ position: 'absolute', left: 30, top: 120, width: 360, height: 330, background: '#fff', border: `3px solid ${C.ink}`, borderRadius: 18, padding: 18 }}>
@@ -234,6 +235,8 @@ export function PasteLeak({ props }: { props: SceneProps }) {
       {stage >= 1 && <Punch text="THE DATA WALKED OUT." since={since} y={500} />}
       <div style={{ position: 'absolute', left: 0, right: 0, top: 580, textAlign: 'center', fontSize: 16, color: '#666' }}>All values on this slide are fictional. Never paste real tokens, BVNs or customer data.</div>
     </Stage>
+    <MemeOverlay show={stage >= 2} src="thisisfine" caption="Use when the developer discovers customer data has been exposed." />
+    </>
   );
 }
 
@@ -417,10 +420,11 @@ export function StackScene({ props }: { props: SceneProps }) {
 const CTRL = ['MINIMIZE', 'CLASSIFY', 'RESTRICT', 'ENCRYPT', 'RETAIN', 'DELETE', 'AUDIT'];
 export function PrivacyArch({ props }: { props: SceneProps }) {
   const t = useClock(14000);
-  const stage = useStage(1);
+  const stage = useStage(2);
   const since = useSince(stage >= 1, 1000);
 
   return (
+    <>
     <Stage w={1100} h={640}>
       <Head p={props} />
       <div style={{ position: 'absolute', left: 30, top: 150, width: 1040, height: 300, border: `3px dashed ${C.blue}`, borderRadius: 26, background: 'rgba(66,133,244,.07)' }} />
@@ -442,6 +446,12 @@ export function PrivacyArch({ props }: { props: SceneProps }) {
       <div style={{ position: 'absolute', left: 30, top: 480, fontSize: 16, color: '#555' }}>raw data (red) → filtered, permission-checked, governed (green)</div>
       {stage >= 1 && <Punch text="DON’T BOLT PRIVACY ON. BUILD IT IN." since={since} y={535} />}
     </Stage>
+    <MemeOverlay show={stage >= 2} src="drake" caption="Collect only what’s necessary.">
+      {[['Collect everything just in case.', '0%'], ['Collect only what’s necessary.', '50%']].map(([tx, y]) => (
+        <div key={tx} style={{ position: 'absolute', left: '50%', right: '1%', top: y, height: '49%', display: 'grid', placeItems: 'center', textAlign: 'center', fontSize: '2.7cqh', fontWeight: 800, padding: '0 1cqh', color: '#171923' }}>{tx}</div>
+      ))}
+    </MemeOverlay>
+    </>
   );
 }
 
@@ -554,20 +564,21 @@ const PANEL: [string, string, string][] = [
   ['Data access', 'What can it retrieve?', 'Scoped'],
   ['Purpose', 'Why is it processing this?', 'Declared'],
   ['Permissions', 'What actions can it perform?', 'Least privilege'],
-  ['Human oversight', 'Which actions need approval?', 'High-impact'],
+  ['Human oversight', 'Which actions need approval?', 'High impact'],
   ['Audit trail', 'Can we reconstruct what happened?', 'Logged'],
   ['Retention', 'How long is data kept?', '30 days'],
   ['Kill switch', 'Can we stop it immediately?', 'Armed'],
 ];
 export function GovDash({ props }: { props: SceneProps }) {
-  const stage = useStage(1);
-  const since = useSince(stage >= 1, 6000);
+  const stage = useStage(2);
+  const since = useSince(stage >= 2, 6000);
   const t = useClock(1500);
 
   return (
+    <>
     <Stage w={1100} h={640}>
       <Head p={props} />
-      {stage < 1 ? (
+      {stage < 2 ? (
         <div style={{ position: 'absolute', left: 330, top: 160, width: 440, textAlign: 'center', opacity: seg(t, 0, 800) }}>
           <div style={{ fontSize: 190, lineHeight: 1 }}>🗂</div>
           <div style={{ fontSize: 54, fontWeight: 800, letterSpacing: '0.06em' }}>GOVERNANCE</div>
@@ -585,8 +596,10 @@ export function GovDash({ props }: { props: SceneProps }) {
           ))}
         </div>
       )}
-      {stage >= 1 && since > 3600 && <Punch text="GOVERNANCE IS A PRODUCT FEATURE." since={since - 3600} y={590} />}
+      {stage >= 2 && since > 3600 && <Punch text="GOVERNANCE IS A PRODUCT FEATURE." since={since - 3600} y={590} />}
     </Stage>
+    <MemeOverlay show={stage === 1} src="michael" caption="When governance asks for AI documentation." />
+    </>
   );
 }
 
