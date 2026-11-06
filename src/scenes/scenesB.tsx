@@ -68,8 +68,8 @@ export function Split({ props }: { props: SceneProps }) {
   return (
     <Stage w={1100} h={620}>
       <Head p={props} />
-      {panel(rx, C.pink, 'SECURITY', 'Can someone access, alter or steal it?', ['Controls', 'Threats', 'Resilience'], 1)}
-      {panel(lx, C.sky, 'PRIVACY', 'Should we collect, use or share this?', ['Purpose', 'Rights', 'Context'], 2)}
+      {panel(rx, C.pink, 'SECURITY', 'Can someone access, alter or steal it?', ['Confidentiality', 'Integrity', 'Availability'], 1)}
+      {panel(lx, C.sky, 'PRIVACY', 'Should we collect, use or share this?', ['Purpose', 'Rights', 'Legal basis'], 2)}
       {stage >= 2 && (
         <div style={{ position: 'absolute', left: 0, right: 0, top: 480, textAlign: 'center', fontSize: 30, fontWeight: 800, ...fade(clamp(since / 600)) }}>
           One system. Two different questions.
@@ -235,7 +235,7 @@ export function PasteLeak({ props }: { props: SceneProps }) {
       {stage >= 1 && <Punch text="THE DATA WALKED OUT." since={since} y={500} />}
       <div style={{ position: 'absolute', left: 0, right: 0, top: 580, textAlign: 'center', fontSize: 16, color: '#666' }}>All values on this slide are fictional. Never paste real tokens, BVNs or customer data.</div>
     </Stage>
-    <MemeOverlay show={stage >= 2} src="thisisfine" caption="Use when the developer discovers customer data has been exposed." />
+    <MemeOverlay show={stage >= 2} src="thisisfine" caption="When the developer discovers customer data has been exposed." />
     </>
   );
 }

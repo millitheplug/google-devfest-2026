@@ -175,9 +175,10 @@ export function WebForm({ props }: { props: SceneProps }) {
   }
 
   const msgs = [
-    ['Product', 'Let’s collect it just in case.', C.yellow],
-    ['Security', 'Where are we storing it?', C.sky],
-    ['Product', 'We’ll figure that out.', C.yellow],
+    ['Product', 'Let’s collect BVN, NIN, DOB and location, just in case.', C.yellow],
+    ['Security', 'For what purpose?', C.sky],
+    ['Privacy', 'Yes, what’s the purpose? And what’s our lawful basis?', C.mint],
+    ['Product', 'We’ll figure that out later.', C.yellow],
     ['Database', '', C.pink],
   ] as const;
 
@@ -200,9 +201,9 @@ export function WebForm({ props }: { props: SceneProps }) {
             const p = seg(since, 500 + i * 1300, 900 + i * 1300);
 
             return (
-              <div key={i} style={{ display: 'flex', gap: 10, margin: '10px 0', ...fade(p, 12) }}>
+              <div key={i} style={{ display: 'flex', gap: 10, margin: '8px 0', ...fade(p, 12) }}>
                 <div style={{ width: 32, height: 32, borderRadius: 9, background: col, border: `2px solid ${C.ink}`, display: 'grid', placeItems: 'center', fontWeight: 700, fontSize: 14 }}>{who[0]}</div>
-                <div style={{ fontSize: 15 }}>
+                <div style={{ fontSize: 14, lineHeight: 1.25 }}>
                   <b>{who}</b>
                   <div>{text || <span style={{ letterSpacing: 4 }} className="sc-blink">•••</span>}</div>
                 </div>
@@ -359,7 +360,7 @@ export function MoneyMachine() {
 
 /* ───────────── Opening: the plot twist ───────────── */
 const TWIST = [
-  'WAS CONSENT OBTAINED, OR WHAT’S YOUR LAWFUL BASIS?',
+  'WHAT’S YOUR LAWFUL BASIS FOR PROCESSING THE DATA?',
   'WHY DO YOU NEED THEIR BVN?',
   'WHERE IS YOUR PRIVACY POLICY?',
   'WHO CAN ACCESS THEIR DATA?',
@@ -452,7 +453,7 @@ export function TitleGlitch({ props }: { props: SceneProps }) {
 /* ───────────── Slide 3: Nigeria runs on forms ───────────── */
 const TILES = [
   ['🏧', 'POS transaction', 'CARD · AMOUNT'],
-  ['🏦', 'Fintech onboarding', 'BVN · SELFIE'],
+  ['🏦', 'Fintech onboarding', 'BVN · LIVENESS TEST'],
   ['🎓', 'Admission portal', 'NAME · RESULTS'],
   ['🏥', 'Hospital registration', 'HEALTH · NOK'],
   ['🛒', 'Online store checkout', 'ADDRESS · CARD'],

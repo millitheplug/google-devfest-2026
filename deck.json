@@ -221,7 +221,7 @@
       "props": {
         "n": 2,
         "kicker": "ACT II · THE DATA WE COLLECT",
-        "title": "Security is not the same as privacy."
+        "title": "Security is not the same as Privacy."
       },
       "background": {
         "type": "color",
@@ -314,7 +314,7 @@
       "props": {
         "n": 3,
         "kicker": "ACT III · THEN AI ARRIVED",
-        "title": "Your application just became an agent."
+        "title": "Your application just became an Agent."
       },
       "background": {
         "type": "color",
@@ -468,7 +468,7 @@
         "kicker": "SLIDE 13",
         "title": "Prompt injection",
         "src": "cat",
-        "tag": "Woman yelling at cat",
+        "tag": "",
         "bubbles": [
           {
             "who": "Developer",
@@ -523,7 +523,7 @@
         "kicker": "ACT IV · PRIVACY MEETS REALITY",
         "title": "WHO AUTHORIZED IT?",
         "src": "pikachu",
-        "tag": "Surprised Pikachu",
+        "tag": "Whaoo",
         "bubbles": [
           {
             "who": "Developer",
@@ -538,7 +538,7 @@
             "text": "“…”"
           }
         ],
-        "punch": "The breach starts with a shortcut, not a hacker."
+        "punch": "A breach starts with a shortcut, not a hacker."
       },
       "background": {
         "type": "color",
@@ -742,7 +742,7 @@
       "props": {
         "n": 6,
         "kicker": "ACT VI · THE MISSING LAYER",
-        "title": "The architectural reveal."
+        "title": "The Architectural reveal."
       },
       "background": {
         "type": "color",
